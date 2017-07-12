@@ -2,8 +2,8 @@
 <wls:weblogic-web-app xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-web-app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.3/weblogic-web-app.xsd">
     <wls:weblogic-version>10.3.6</wls:weblogic-version>
     <wls:context-root>logs_retrieval</wls:context-root>
-    
-<!-- 
+
+<!--
 
 /u01/domains1036/MYDOMAIN/logs
 /u01/domains1036/MYDOMAIN/servers/SERVER1/logs
@@ -15,8 +15,8 @@
 error_web.log :
 /tmp
 
-----
- 
+===
+
  index-directory-enabled
 
 The <index-directory-enabled> element controls whether or not to automatically generate an HTML directory listing if no suitable index file is found.
@@ -44,8 +44,8 @@ https://docs.oracle.com/cd/E28280_01/web.1111/e13712/weblogic_xml.htm#WBAPP596
 		<wls:local-path>/</wls:local-path>
 		<wls:url-pattern>/tmp/*</wls:url-pattern>
 	</wls:virtual-directory-mapping>
-	
-	
+
+
 	<wls:jsp-descriptor>
 	  <wls:page-check-seconds>0</wls:page-check-seconds>
 	</wls:jsp-descriptor>
