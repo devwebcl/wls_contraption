@@ -28,21 +28,21 @@ https://docs.oracle.com/cd/E28280_01/web.1111/e13712/weblogic_xml.htm#WBAPP596
 		<wls:index-directory-enabled>true</wls:index-directory-enabled>
 	</wls:container-descriptor>
 
-	<wls:virtual-directory-mapping>
-		<wls:local-path>/u01/domains1036/MYDOMAIN</wls:local-path>
+	<!--  wls:virtual-directory-mapping>
+		<wls:local-path>/u04</wls:local-path>
 		<wls:url-pattern>/servers/logs/*</wls:url-pattern>
-	</wls:virtual-directory-mapping>
+	</wls:virtual-directory-mapping -->
 
-	<wls:virtual-directory-mapping>
+	<!--  wls:virtual-directory-mapping>
 		<wls:local-path>/u01/domains1036/MYDOMAIN/</wls:local-path>
 		<wls:url-pattern>/logs/*</wls:url-pattern>
-	</wls:virtual-directory-mapping>
+	</wls:virtual-directory-mapping -->
 
     <!-- depending on OS we must use : "/" or "c:" -->
 	<wls:virtual-directory-mapping>
 		<!-- wls:local-path>c:/</wls:local-path -->
 		<wls:local-path>/</wls:local-path>
-		<wls:url-pattern>/tmp/*</wls:url-pattern>
+		<wls:url-pattern>/u04/*</wls:url-pattern>
 	</wls:virtual-directory-mapping>
 
 
