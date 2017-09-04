@@ -39,7 +39,7 @@ public class TestJdbc extends HttpServlet {
         try {
             ctx = new InitialContext();
 
-            javax.sql.DataSource ds = (javax.sql.DataSource) ctx.lookup("JDBC/VISTA_360_CN");
+            javax.sql.DataSource ds = (javax.sql.DataSource) ctx.lookup("JDBC/my_datasource");
             Connection conn = ds.getConnection();
 
             // Create Oracle DatabaseMetaData object
