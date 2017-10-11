@@ -8,6 +8,7 @@ Bunch of tools to help WLS admin, debugging, etc.
 2. JNDI tree printing
 3. Oracle JDBC version from a Managed Server
 4. Servers Health Status
-5. Several WLST scripts to automatize tasks
+5. Several WLST scripts to automatize tasks (java weblogic.WLST -skipWLSModuleScanning <script>.py)
+
 
 
