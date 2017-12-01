@@ -1,0 +1,461 @@
+<html>
+<head>
+<script src="spry.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<link href="WLSTSummarizer.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div id="divContainer">
+<h1 class="headline3">Introduction</h1>
+<p>This is the output from a WLST script run in <u><strong>ONLINE mode</strong></u>. The script retrieves JDBC System Resource and JTA (Java Transaction API) MBean values. </p>
+<p>Note: Make sure the spry.js, jquery-ui.js and WLSTSummarizer.css are located in same local directory as this HTML file
+</p>
+</div>
+<p></p>
+<div id="divContainer">
+<p></p>
+<div id="TabbedPanels001" class="TabbedPanels">
+<ul class="TabbedPanelsTabGroup">
+<li class="TabbedPanelsTab" tabindex="0">JDBC</li>
+<li class="TabbedPanelsTab" tabindex="0">JTA</li>
+</ul>
+<div class="TabbedPanelsContentGroup">
+<div class="TabbedPanelsContent">
+<h3 class="headline1">JDBC System Resources - Configuration</h3>
+<p>
+</p>
+<table id="my_JDBC_table" border="1" class="formatHTML5">
+<thead align="left">
+<tr>
+<th rowspan=2>Name</th>
+<th rowspan=2>Type</th>
+<th colspan=2>Target(s)</th>
+<th rowspan=2>Driver</th>
+<th rowspan=2>Global Transactions Protocol</th>
+<th rowspan=2>JDBC URL</th>
+<th colspan=3>Connection Pool Capacity</th>
+</tr>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Init</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+rowspan=
+0
+>
+JDBC GridLink Data Source-0
+</td>
+<td
+rowspan=
+0
+>
+GridLink
+</td>
+<td>
+None
+</td>
+<td>
+n/a
+</td>
+<td>
+oracle.jdbc.xa.client.OracleXADataSource
+</td>
+<td>
+TwoPhaseCommit
+</td>
+<td>
+jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=morty-lap)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xe)))
+</td>
+<td
+rowspan=
+0
+>
+1
+</td>
+<td
+rowspan=
+0
+>
+1
+</td>
+<td
+rowspan=
+0
+>
+15
+</td>
+</tr>
+<tr>
+<td
+rowspan=
+2
+>
+TestJDBCSource
+</td>
+<td
+rowspan=
+2
+>
+Generic
+</td>
+<td>
+MyCluster
+</td>
+<td>
+Cluster
+</td>
+<td
+rowspan=
+2
+>
+oracle.jdbc.xa.client.OracleXADataSource
+</td>
+<td
+rowspan=
+2
+>
+TwoPhaseCommit
+</td>
+<td
+rowspan=
+2
+>
+jdbc:oracle:thin:@localhost:1521:orcl
+</td>
+<td
+rowspan=
+2
+>
+1
+</td>
+<td
+rowspan=
+2
+>
+1
+</td>
+<td
+rowspan=
+2
+>
+15
+</td>
+</tr>
+<tr>
+<td>
+MyManagedServer
+</td>
+<td>
+Server
+</td>
+</tr>
+<tr>
+<td
+rowspan=
+0
+>
+TestJDBCSource02
+</td>
+<td
+rowspan=
+0
+>
+Generic
+</td>
+<td>
+None
+</td>
+<td>
+n/a
+</td>
+<td>
+weblogic.jdbcx.sqlserver.SQLServerDataSource
+</td>
+<td>
+TwoPhaseCommit
+</td>
+<td>
+jdbc:weblogic:sqlserver://localhost:1433
+</td>
+<td
+rowspan=
+0
+>
+1
+</td>
+<td
+rowspan=
+0
+>
+1
+</td>
+<td
+rowspan=
+0
+>
+15
+</td>
+</tr>
+<tr>
+<td
+rowspan=
+1
+>
+TestJDBCSource03
+</td>
+<td
+rowspan=
+1
+>
+Generic
+</td>
+<td>
+AdminServer
+</td>
+<td>
+Server
+</td>
+<td
+rowspan=
+1
+>
+oracle.jdbc.xa.client.OracleXADataSource
+</td>
+<td
+rowspan=
+1
+>
+TwoPhaseCommit
+</td>
+<td
+rowspan=
+1
+>
+jdbc:oracle:thin:@localhost:1521:XE
+</td>
+<td
+rowspan=
+1
+>
+1
+</td>
+<td
+rowspan=
+1
+>
+1
+</td>
+<td
+rowspan=
+1
+>
+15
+</td>
+</tr>
+<tr>
+<td
+rowspan=
+0
+>
+TestJDBCSource05
+</td>
+<td
+rowspan=
+0
+>
+Generic
+</td>
+<td>
+None
+</td>
+<td>
+n/a
+</td>
+<td>
+oracle.jdbc.xa.client.OracleXADataSource
+</td>
+<td>
+TwoPhaseCommit
+</td>
+<td>
+jdbc:oracle:thin:@localhost:1521:XE
+</td>
+<td
+rowspan=
+0
+>
+1
+</td>
+<td
+rowspan=
+0
+>
+1
+</td>
+<td
+rowspan=
+0
+>
+15
+</td>
+</tr>
+</tbody></table>
+<p></p>
+<h3 class="headline1">JDBC Runtime Information</h3>
+<p>
+</p>
+<table id="my_JDBCRuntime_table" border="1" class="formatHTML5">
+<thead align="left">
+<tr>
+<th rowspan=2>Server Name</th>
+<th rowspan=2>JDBC Data Source Name</th>
+<th rowspan=2>State</th>
+<th colspan=4>Connections</th>
+</tr>
+<tr>
+<th>Active</th>
+<th>Waiting</th>
+<th>Leaked</th>
+<th>Current Capacity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan=
+1
+>
+AdminServer
+</td>
+<td>
+TestJDBCSource03
+</td>
+<td>
+Running
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+</tr>
+</tbody></table>
+<p></p>
+</div>
+<div class="TabbedPanelsContent">
+<h3 class="headline1">JTA - Domain Level Configuration</h3>
+<p>
+</p>
+<table id="my_JTA_table" border="1" class="formatHTML5">
+<thead align="left">
+<tr>
+<th>Domain Name</th>
+<th>Abandon Timeout Seconds</th>
+<th>Before Completion Iteration Limit</th>
+<th>Checkpoint Interval Seconds</th>
+<th>Forget Heuristics</th>
+<th>Max Transactions</th>
+<th>Two Phase Enabled</th>
+<th>Timeout Seconds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+MyDomain
+</td>
+<td>
+86400
+</td>
+<td>
+10
+</td>
+<td>
+300
+</td>
+<td>
+1
+</td>
+<td>
+10000
+</td>
+<td>
+1
+</td>
+<td>
+30
+</td>
+</tr>
+</tbody></table>
+<p></p>
+<h3 class="headline1">JTA Runtime Information - Per Server</h3>
+<p>
+</p>
+<table id="my_JTARuntime_table" border="1" class="formatHTML5">
+<thead align="left">
+<tr>
+<th>Server</th>
+<th>Active Transaction Total Count</th>
+<th>Transaction Abandoned Total Count</th>
+<th>Transaction Committed Total Count</th>
+<th>Transaction Total Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+AdminServer
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+MyManagedServer04
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+</tbody></table>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var TabbedPanels001 = new Spry.Widget.TabbedPanels("TabbedPanels001");
+</script>
+</body>
+</html>

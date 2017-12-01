@@ -1,0 +1,501 @@
+/* cSS Sheet for WLST Domain Summarizer
+ * Adapted from Miriam Brace's Get Proactive CSS
+ * Owner: Daniel Mortimer,
+ * Version: 1.0
+ * Date: Apr 25, 2012
+ */
+
+.headline1 {
+	border-bottom: 1px dashed #aaa;
+	border-left: 7px solid #aaa;		
+	border-left: 7px solid rgba(0,0,0,.2);
+	margin: 0 -15px 15px -22px;
+	padding: 5px 15px;
+} 
+ 
+ 
+.headline2 {
+	border-bottom: 1px solid #aaa;
+	margin: 15px 0;
+	padding: 5px 0;
+	position: relative;
+}
+
+.headline2:before,
+.headline2:after {
+	content: '';
+	border-right: 20px solid #fff;
+	border-top: 15px solid #aaa;
+	bottom: -15px;
+	position: absolute;
+	left: 25px;
+}
+
+.headline2:after {
+	border-top-color: #fff;
+	border-right-color: transparent;
+	bottom: -13px;
+	left: 26px;
+} 
+ 
+ 
+ .headline3 {
+  position: relative;
+  margin-left: -22px; /* 15px padding + 7px border ribbon shadow*/
+  margin-right: -22px;
+  padding: 15px;
+  background: #e5e5e5;
+  background: linear-gradient(#f5f5f5, #e5e5e5);
+  box-shadow: 0 -1px 0 rgba(255,255,255,.8) inset;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.headline3:before,
+.headline3:after {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  content:'';
+  border-top: 6px solid #555;
+  border-left: 6px solid transparent;
+}
+
+.headline3:before {
+  border-top: 6px solid #555;
+  border-right: 6px solid transparent;
+  border-left: none;
+  left: auto;
+  right: 0;
+  bottom: -6px;
+}
+ 
+
+.headline4 {
+	position: relative;
+	border-color: #eee;
+	border-style: solid;
+	border-width: 5px 5px 5px 0;
+	background: #fff;
+	margin: 10px 0 15px -15px;
+	padding: 5px 15px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.headline4:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	bottom: 15px;
+	right: 15px;
+	width: 70%;
+	height: 10px;
+	background: rgba(0, 0, 0, .7);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, .7);
+	transform: rotate(2deg);		
+}
+ 
+ 
+ 
+/* ~~ Element/tag selectors ~~ */
+.container ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+
+
+/* ~~ this fixed width container surrounds all other divs ~~ */
+.containergp {
+	/* width: 974px; */
+	background: #FFFFFF;
+    /*   margin: 15px 0px 0px 0px; */
+	overflow: hidden; /* this declaration makes the .container understand where the floated columns within ends and contain them */
+}
+.contentgp h1 {font-size:18px; font-weight:bold; margin:0px;padding:0px;}
+.contentgp h2 {font-size:14px; font-weight:bold; margin:0px;padding:0px;}
+.contentgp a:link {color:#666666; text-decoration:underline;}
+.contentgp a:visited {color:#000000;text-decoration:none;}
+.contentgp a:hover {color:#990000;text-decoration:underline;}
+
+
+.container B {color:#ff0000;}
+.container P {margin:0px 0px 10px 0px;}
+
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+
+
+
+
+table.title{
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+	border-top: solid 1px #CCC;
+	border-right: solid 1px #CCC;
+	vertical-align: middle;
+        background-color: #f4f4f4;
+        background: -webkit-gradient(linear, left top, left bottom, from(#F4F4F4), to(#FFFFFF));
+        background: -moz-linear-gradient(top, #F4F4F4, #FFFFFF);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	vertical-align: top;
+	width: 760px;
+        color: #666666;
+	font-family: Tahoma, Verdana, Helvetica, sans-serif; font-size: 20px; 
+}
+table.title b {color: #900; text-align:left; }
+table.title ol {padding: 5px 5px 5px 5px; }
+
+   /* add gradient */
+table.title  th {   
+            text-align: left; 
+           
+           
+        padding: 0.6em;
+        }
+
+
+
+
+.contentgp {
+
+	padding:  0;
+	width: 760px;
+	float: left;
+	margin-left: 20px;
+}
+
+
+        
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+.introduction { border: thin; border-color:#930; -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;-moz-border-radius: 15px; font-family:Arial, Helvetica, sans-serif; font-size:10px; padding: 5px 5px 5px 15px;
+	background:#FFFFFF;
+	margin-top: 20px;
+	text-align:left;
+	max-width: 740px }
+	
+
+
+     /*** central column on page ***/
+        #divContainer
+        {
+            /* max-width: 740px;*/
+            /* margin: 0 auto; */
+            /* font-family: Tahoma, Verdana, Helvetica, sans-serif; */
+			font-size: 0.875em;
+            padding: 0.5em 1em 1em 1em;
+            border: solid 1px #CCC;
+ 
+            /* rounded corners */
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+ 
+            /* add gradient e0e0e0
+            background-color: #a6a6a6;
+            background: -webkit-gradient(linear, left top, left bottom, from(#b9b9b9), to(#f4f4f4));
+            background: -moz-linear-gradient(top, #f4f4f4, #9b9b9);
+ 
+            /* add box shadows */
+            -moz-box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+            -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+        }
+        
+         /*** central column on page ***/
+ 
+        .divContainer h1 {color:#FFE47A; font-size:1.5em;}
+ 
+        /*** sample table to demonstrate CSS3 formatting ***/
+        table.formatHTML5 {
+            width: 100%;
+            border-collapse:collapse;
+            text-align:left;
+            color: #606060;
+        }
+ 
+        /*** table's thead section, head row style ***/
+        table.formatHTML5 thead tr td  {
+            background-color: White;
+            vertical-align:middle;
+            padding: 0.6em;
+            font-size:0.8em;
+        }
+ 
+        /*** table's thead section, coulmns header style ***/
+        table.formatHTML5 thead tr th
+        {
+            padding: 0.5em;
+            /* add gradient */
+            background-color: #efefef;
+            background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#b9b9b9));
+            background: -moz-linear-gradient(top, #f4f4f4, #b9b9b9);
+            color: #000000;
+        }
+ 
+        /*** table's tbody section, odd rows style ***/
+        /* table.formatHTML5 tbody tr:nth-child(odd) {
+           background-color: #fafafa;
+        } */
+ 
+        /*** hover effect to table's tbody odd rows ***/
+        /*table.formatHTML5 tbody tr:nth-child(odd):hover
+        {
+            cursor:pointer;
+            /* add gradient */
+          /*  background-color: #a6a6a6;
+            background: -webkit-gradient(linear, left top, left bottom, from(#606060), to(#000000));
+            background: -moz-linear-gradient(top, #606060, #000000);
+            color: #FFFFFF;
+        } */
+ 
+        /*** table's tbody section, even rows style ***/
+        /*table.formatHTML5 tbody tr:nth-child(even) {
+            background-color: #efefef;
+        } */
+    
+ 
+        /*** hover effect to apply to table's tbody section, even rows ***/
+       /*table.formatHTML5 tbody tr:nth-child(even):hover
+        {
+            cursor:pointer;
+            /* add gradient */
+            /*background-color: #808080;
+            background: -webkit-gradient(linear, left top, left bottom, from(#606060), to(#000000));
+            background: -moz-linear-gradient(top, #606060, #000000);
+            color: #FFFFFF;
+        } */
+ 
+       /*** table's tbody section, last row style ***/
+        table.formatHTML5 tbody tr:last-child {
+             border-bottom: solid 1px #404040;
+        }
+ 
+        /*** table's tbody section, separator row pseudo-class ***/
+        table.formatHTML5 tbody tr.separator {
+            /* add gradient */
+            background-color: #808080;
+            background: -webkit-gradient(linear, left top, left bottom, from(#606060), to(#909090));
+            background: -moz-linear-gradient(top, #606060, #909090);
+            color: #dadada;
+        }
+ 
+        /*** table's td element, all section ***/
+        table.formatHTML5 td {
+           vertical-align:middle;
+           padding: 0.5em;
+        }
+ 
+        /*** table's tfoot section ***/
+        table.formatHTML5 tfoot{
+            text-align:center;
+            color:#303030;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.3);
+		}
+		
+/* SpryTabbedPanels.css - version 0.6 - Spry Pre-Release 1.6.1 */
+
+/* Copyright (c) 2006. Adobe Systems Incorporated. All rights reserved. */
+
+/* Horizontal Tabbed Panels
+ *
+ * The default style for a TabbedPanels widget places all tab buttons
+ * (left aligned) above the content panel.
+ */
+
+/* This is the selector for the main TabbedPanels container. For our
+ * default style, this container does not contribute anything visually,
+ * but it is floated left to make sure that any floating or clearing done
+ * with any of its child elements are contained completely within the
+ * TabbedPanels container, to minimize any impact or undesireable
+ * interaction with other floated elements on the page that may be used
+ * for layout.
+ *
+ * If you want to constrain the width of the TabbedPanels widget, set a
+ * width on the TabbedPanels container. By default, the TabbedPanels widget
+ * expands horizontally to fill up available space.
+ *
+ * The name of the class ("TabbedPanels") used in this selector is not
+ * necessary to make the widget function. You can use any class name you
+ * want to style the TabbedPanels container.
+ */
+.TabbedPanels {
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	clear: none;
+	width: 100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+}
+
+/* This is the selector for the TabGroup. The TabGroup container houses
+ * all of the tab buttons for each tabbed panel in the widget. This container
+ * does not contribute anything visually to the look of the widget for our
+ * default style.
+ *
+ * The name of the class ("TabbedPanelsTabGroup") used in this selector is not
+ * necessary to make the widget function. You can use any class name you
+ * want to style the TabGroup container.
+ */
+.TabbedPanelsTabGroup {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* This is the selector for the TabbedPanelsTab. This container houses
+ * the title for the panel. This is also the tab "button" that the user clicks
+ * on to activate the corresponding content panel so that it appears on top
+ * of the other tabbed panels contained in the widget.
+ *
+ * For our default style, each tab is positioned relatively 1 pixel down from
+ * where it wold normally render. This allows each tab to overlap the content
+ * panel that renders below it. Each tab is rendered with a 1 pixel bottom
+ * border that has a color that matches the top border of the current content
+ * panel. This gives the appearance that the tab is being drawn behind the
+ * content panel.
+ *
+ * The name of the class ("TabbedPanelsTab") used in this selector is not
+ * necessary to make the widget function. You can use any class name you want
+ * to style this tab container.
+ */
+.TabbedPanelsTab {
+	position: relative;
+	top: 1px;
+	float: left;
+	padding: 4px 10px;
+	margin: 0px 1px 0px 0px;
+	background-color: #5B6981;
+	list-style: none;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #999;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	 /* rounded corners */
+-webkit-border-top-left-radius: 7px;
+-webkit-border-top-right-radius: 7px;
+-moz-border-radius-topleft: 7px;
+-moz-border-radius-topright: 7px;
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+	cursor: pointer;
+	font-family: Tahoma, Verdana, Helvetica, sans-serif; 
+	font-size: 10pt;
+	font-weight: bold;
+	color: rgb(255,255,255);
+}
+
+/* This selector is an example of how to change the appearnce of a tab button
+ * container as the mouse enters it. The class "TabbedPanelsTabHover" is
+ * programatically added and removed from the tab element as the mouse enters
+ * and exits the container.
+ */
+.TabbedPanelsTabHover {
+	background-color: rgb(255,0,0);
+	color: rgb(255,255,255);
+}
+
+/* This selector is an example of how to change the appearance of a tab button
+ * container after the user has clicked on it to activate a content panel.
+ * The class "TabbedPanelsTabSelected" is programatically added and removed
+ * from the tab element as the user clicks on the tab button containers in
+ * the widget.
+ *
+ * As mentioned above, for our default style, tab buttons are positioned
+ * 1 pixel down from where it would normally render. When the tab button is
+ * selected, we change its bottom border to match the background color of the
+ * content panel so that it looks like the tab is part of the content panel.
+ */
+.TabbedPanelsTabSelected {
+	background-color: rgb(130,158,126);
+	border-bottom: 1px solid #EEE;
+	color: rgb(255,255,255);
+}
+
+/* This selector is an example of how to make a link inside of a tab button
+ * look like normal text. Users may want to use links inside of a tab button
+ * so that when it gets focus, the text *inside* the tab button gets a focus
+ * ring around it, instead of the focus ring around the entire tab.
+ */
+.TabbedPanelsTab a {
+	color: black;
+	text-decoration: none;
+}
+
+/* This is the selector for the ContentGroup. The ContentGroup container houses
+ * all of the content panels for each tabbed panel in the widget. For our
+ * default style, this container provides the background color and borders that
+ * surround the content.
+ *
+ * The name of the class ("TabbedPanelsContentGroup") used in this selector is
+ * not necessary to make the widget function. You can use any class name you
+ * want to style the ContentGroup container.
+ */
+.TabbedPanelsContentGroup {
+	clear: both;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	background-color: #EEE;
+}
+
+/* This is the selector for the Content panel. The Content panel holds the
+ * content for a single tabbed panel. For our default style, this container
+ * provides some padding, so that the content is not pushed up against the
+ * widget borders.
+ *
+ * The name of the class ("TabbedPanelsContent") used in this selector is
+ * not necessary to make the widget function. You can use any class name you
+ * want to style the Content container.
+ */
+.TabbedPanelsContent {
+	overflow: hidden;
+	padding: 4px;
+	background-color: rgb(255,255,255);
+	
+}
+
+.TabbedPanelsContentPROD {
+	overflow: hidden;
+	padding: 4px;
+	background-color: rgb(255,255,255);
+	
+}
+.TabbedPanelsContentPOL {
+	overflow: hidden;
+	padding: 4px;
+	background-color: rgb(255,255,255);
+	
+}
+
+/* This selector is an example of how to change the appearnce of the currently
+ * active container panel. The class "TabbedPanelsContentVisible" is
+ * programatically added and removed from the content element as the panel
+ * is activated/deactivated.
+ */
+.TabbedPanelsContentVisible {
+}
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}				
