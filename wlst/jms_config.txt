@@ -1,0 +1,78 @@
+Configuration JMS:
+==================
+
+CORE_WLS_Domain --> Services --> Persistent Stores -->
+
+New:
+
+Name: FileStore-Mensajeria1
+Target: Managed Server 1 (WLS01)
+Directory: jmsMensajeria_1
+(Activate Changes)
+
+Name: FileStore-Mensajeria2
+Target: Managed Server 2 (WLSS02)
+Directory: jmsMensajeria_2
+(Activate Changes)
+
+
+CORE_WLS_Domain --> Services --> Messaging --> JMS Servers
+
+New:
+
+Name: JMSServer-Mensajeria_1
+Persistent Store: FileStore-Mensajeria1
+Target: WLS01 (migratable)
+(finish)
+
+Name: JMSServer-Mensajeria_2
+Persistent Store: FileStore-Mensajeria2
+Target: WLS02 (migratable)
+(finish)
+
+(Activate Changes)
+
+
+CORE_WLS_Domain --> Services --> Messaging --> JMS Modules
+
+Name: JMSModule_Mensajeria
+Target: wls_core_cluster
+(next/finish)
+(Activate Changes)
+
+
+entrar a JMS Module creado: (crear subdeployment)
+CORE_WLS_Domain --> Services --> Messaging --> JMS Modules --> JMSModule_Mensajeria --> Subdeployments
+
+New:
+
+name: MensajeriaSubdeployment
+Target: JMSServer-Mensajeria_1, JMSServer-Mensajeria_2
+(Activate Changes)
+
+
+CORE_WLS_Domain --> Services --> Messaging --> JMS Modules --> JMSModule_Mensajeria
+
+New:
+
+Connection Factory (next)
+
+Name: ConnectionFactory-Mensajeria
+JNDI Name: jms/ConnectionFactory-Mensajeria (next)
+(finish)
+(Activate Changes)
+
+New:
+
+Distributed Queue (next)
+
+Name: DistributedQueue-Mensajeria
+JNDI Name: jms/journal-standar (next)
+Advanced Targeting: MensajeriaSubdeployment
+
+JMS Servers: JMSServer-Mensajeria_1, JMSServer-Mensajeria_2
+(finish)
+(Activate Changes)
+
+
+
