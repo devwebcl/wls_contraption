@@ -9,8 +9,16 @@ import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 import javax.naming.Context;
+
+//import com.google.common.collect.HashBasedTable;
+//import com.google.common.collect.Table;
+
 import weblogic.management.jmx.MBeanServerInvocationHandler;
+
+import java.util.Date;
 import java.util.Hashtable;
+import java.util.Map;
+import java.util.Set;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import weblogic.management.runtime.JDBCDataSourceRuntimeMBean;
@@ -98,5 +106,57 @@ public class ServerHealthStateMonitor {
         s.printNameAndState();
         connector.close();
     }
+
+    /*
+    public static void main(String[] args) throws Exception {
+
+        System.out.println("Starting...  " + new Date() );
+
+        Table<String, String, String> domainCredentials = HashBasedTable.create();
+
+        //Guava Table:
+        domainCredentials.put(DOMAIN1, HOSTNAME, "127.0.0.1");
+        domainCredentials.put(DOMAIN1, PORT, "40000");
+        domainCredentials.put(DOMAIN1, USERNAME, "weblogic");
+        domainCredentials.put(DOMAIN1, PASSWORD, "welcome1");
+
+        domainCredentials.put(DOMAIN2, HOSTNAME, "127.0.0.1");
+        domainCredentials.put(DOMAIN2, PORT, "10000");
+        domainCredentials.put(DOMAIN2, USERNAME, "weblogic");
+        domainCredentials.put(DOMAIN2, PASSWORD, "welcome1");
+
+        domainCredentials.put(DOMAIN3, HOSTNAME, "127.0.0.1");
+        domainCredentials.put(DOMAIN3, PORT, "20000");
+        domainCredentials.put(DOMAIN3, USERNAME, "weblogic");
+        domainCredentials.put(DOMAIN3, PASSWORD, "welcome1");
+
+        domainCredentials.put(DOMAIN4, HOSTNAME, "127.0.0.1");
+        domainCredentials.put(DOMAIN4, PORT, "30000");
+        domainCredentials.put(DOMAIN4, USERNAME, "weblogic");
+        domainCredentials.put(DOMAIN4, PASSWORD, "welcome1");
+
+
+        Set<String> dominios = domainCredentials.rowKeySet();
+
+        for(String i : dominios) {
+
+            Map<String, String> cred = domainCredentials.row(i);
+            System.out.println(">>"+cred);
+
+            String hostname = cred.get(HOSTNAME);
+            String portString = cred.get(PORT);
+            String username =  cred.get(USERNAME);
+            String password = cred.get(PASSWORD);
+
+            ServerHealthStateMonitor s = new ServerHealthStateMonitor();
+            initConnection(hostname, portString, username, password);
+            s.printNameAndState();
+            connector.close();
+
+            System.out.println();
+
+        }*/
+
+
 
 }
