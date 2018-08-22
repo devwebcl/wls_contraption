@@ -23,7 +23,27 @@ Global Variables
 """
 username = 'weblogic'
 password = 'welcome1'
-URL = 't3://127.0.0.1:7001'
+
+# tiene que ser URL de algun Managed Server
+
+# URL = 't3://127.0.0.1:7001'
+
+#URL = 't3://200.14.166.72:9071'
+
+# WLS_REST01
+URL = 't3://200.14.166.72:7011'
+
+# WLSSandbox01
+#URL = 't3://200.14.166.72:30010'
+
+# WLSCore01
+#URL = 't3://200.14.166.72:20010'
+
+# WLSSatellite01
+# URL = 't3://200.14.166.72:10010'
+
+
+
 outputDir = '/Users/German/tmp'
 
 # get the date to add to the file name
@@ -47,10 +67,12 @@ Function to find the libraries
 """
 def getLibraryListing(mbeanPosition):
   cd(mbeanPosition)
-  libraryListing = ls(returnMap='true', returnType='a')
+  libraryListing = ls('c', returnMap='true')
+  print(libraryListing.size())
 
   if libraryListing.size() > 0 :
     # print file headings
+
     libraryOutputFileWriter.write("Library Listing " + filedate)
     libraryOutputFileWriter.write(System.getProperty("line.separator"))
     libraryOutputFileWriter.write(System.getProperty("line.separator"))
@@ -72,6 +94,13 @@ def getLibraryListing(mbeanPosition):
     libraryOutputFileWriter.write(System.getProperty("line.separator"))
 
     for library in libraryListing :
+
+      #mio:
+      #cd('ReferencingRuntimes')
+      #ls()
+      #cd('..')
+
+
       # separate the library name from the version number
       libraryArray = library.split('#')
       myoutput = ""
@@ -102,71 +131,7 @@ def getLibraryListing(mbeanPosition):
       # print to the file
       libraryOutputFileWriter.write(myoutput)
       libraryOutputFileWriter.write(System.getProperty("line.separator"))
-  return
-
-
-"""
----------------------------------------------------------------------
-Function to find the applications
----------------------------------------------------------------------
-"""
-def getAppListing(mbeanPosition):
-  cd(mbeanPosition)
-  appListing = ls(returnMap='true', returnType='a')
-
-  if appListing.size() > 0 :
-    # print file headings
-    appOutputFileWriter.write("Deployed Application Listing " + filedate)
-    appOutputFileWriter.write(System.getProperty("line.separator"))
-    appOutputFileWriter.write(System.getProperty("line.separator"))
-
-    appOutputFileWriter.write("Domain    : " + domainName)
-    appOutputFileWriter.write(System.getProperty("line.separator"))
-
-    appOutputFileWriter.write("Server    : " + serverName)
-    appOutputFileWriter.write(System.getProperty("line.separator"))
-
-    appOutputFileWriter.write("MBean path: " + pwd())
-    appOutputFileWriter.write(System.getProperty("line.separator"))
-    appOutputFileWriter.write(System.getProperty("line.separator"))
-
-    appOutputFileWriter.write("Application\tVersion\tServer(s) Deployed To")
-    appOutputFileWriter.write(System.getProperty("line.separator"))
-
-    appOutputFileWriter.write("-----------\t-------\t-----------------------------")
-    appOutputFileWriter.write(System.getProperty("line.separator"))
-
-    for app in appListing :
-      # separate the app name from the version number
-      appArray = app.split('#')
-      myoutput = ""
-
-      itemCount = 0
-      for appItem in appArray :
-        itemCount = itemCount + 1
-        # item 1 is the application name
-        # item 2 is the application version
-        if itemCount > 1:
-          myoutput = myoutput + "\t"
-        myoutput = myoutput + appItem
-
-      # if a application version is not included then add a tab character
-      if itemCount < 2:
-        myoutput = myoutput + "\t"        
-
-      # identify the servers that the application is deployed to
-      serverArray = getTargetServers(app)
-      srvrCnt = 0
-      myoutput = myoutput + "\t"
-      for srvrNm in serverArray :
-        srvrCnt = srvrCnt + 1
-        myoutput = myoutput + srvrNm
-        if srvrCnt < len(serverArray) :
-          myoutput = myoutput + ', '
-        
-      # print to the file
-      appOutputFileWriter.write(myoutput)
-      appOutputFileWriter.write(System.getProperty("line.separator"))
+      
   return
 
 
@@ -203,9 +168,9 @@ Main Routine
 try:
   try:
     connect(username, password, URL)
-    serverConfig()
-    getLibraryListing('/Libraries')
-    getAppListing('/AppDeployments')
+    serverRuntime()
+    getLibraryListing('/LibraryRuntimes')
+   
   except Exception, e:
     print 'Unable to print libraries and applications'
     print e

@@ -1,0 +1,359 @@
+
+####################################################### 
+Thread dump for the running server: AdminServer 
+Dumped this Thread at 8/14/18 3:01 PM 
+#######################################################
+
+"DynamicListenThread[Default]" Id=49 RUNNABLE (in native)
+	at sun.nio.ch.ServerSocketChannelImpl.accept0(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:250)
+	-  locked java.lang.Object@60dac43d
+	at weblogic.socket.WeblogicServerSocket.accept(WeblogicServerSocket.java:31)
+	at weblogic.server.channels.DynamicListenThread$SocketAccepter.accept(DynamicListenThread.java:532)
+	at weblogic.server.channels.DynamicListenThread$SocketAccepter.access$200(DynamicListenThread.java:414)
+	at weblogic.server.channels.DynamicListenThread.run(DynamicListenThread.java:173)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"DynamicListenThread[Default[1]]" Id=48 RUNNABLE (in native)
+	at sun.nio.ch.ServerSocketChannelImpl.accept0(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:250)
+	-  locked java.lang.Object@2624024e
+	at weblogic.socket.WeblogicServerSocket.accept(WeblogicServerSocket.java:31)
+	at weblogic.server.channels.DynamicListenThread$SocketAccepter.accept(DynamicListenThread.java:532)
+	at weblogic.server.channels.DynamicListenThread$SocketAccepter.access$200(DynamicListenThread.java:414)
+	at weblogic.server.channels.DynamicListenThread.run(DynamicListenThread.java:173)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Thread-19" Id=46 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6136272
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6136272
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at weblogic.utils.concurrent.JDK15ConcurrentBlockingQueue.take(JDK15ConcurrentBlockingQueue.java:89)
+	at weblogic.store.internal.PersistentStoreImpl.getOutstandingWork(PersistentStoreImpl.java:724)
+	at weblogic.store.internal.PersistentStoreImpl.synchronousFlush(PersistentStoreImpl.java:1124)
+	at weblogic.store.internal.PersistentStoreImpl.run(PersistentStoreImpl.java:1116)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"[ACTIVE] ExecuteThread: '5' for queue: 'weblogic.kernel.Default (self-tuning)'" Id=45 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at com.munzandmore.stuckthread.LongRunningEJB.threadSleep(LongRunningEJB.java:26)
+	at com.munzandmore.stuckthread.LongRunningEJB_x9v26k_NoIntfViewImpl.__WL_invoke(Unknown Source)
+	at weblogic.ejb.container.internal.SessionLocalMethodInvoker.invoke(SessionLocalMethodInvoker.java:33)
+	at weblogic.ejb.container.internal.AsyncExecutor$Invoker.invoke(AsyncExecutor.java:205)
+	at weblogic.ejb.container.internal.AsyncExecutor.run(AsyncExecutor.java:73)
+	at weblogic.work.WorkAreaContextWrap.run(WorkAreaContextWrap.java:55)
+	at weblogic.work.SelfTuningWorkManagerImpl$WorkAdapterImpl.run(SelfTuningWorkManagerImpl.java:553)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:311)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:263)
+
+
+"oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser" Id=44 TIMED_WAITING on oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser@62a42d7b
+	at java.lang.Object.wait(Native Method)
+	-  waiting on oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser@62a42d7b
+	at oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser.run(BlockSource.java:327)
+
+
+"Abandoned connection cleanup thread" Id=43 WAITING on java.lang.ref.ReferenceQueue$Lock@8a618d5
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@8a618d5
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:135)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:151)
+	at com.mysql.jdbc.NonRegisteringDriver$1.run(NonRegisteringDriver.java:93)
+
+
+"weblogic.GCMonitor" Id=42 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@50a84c62
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@50a84c62
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:135)
+	at weblogic.platform.GCMonitorThread.waitForNotification(GCMonitorThread.java:86)
+	at weblogic.platform.GCMonitorThread.run(GCMonitorThread.java:62)
+
+
+"Thread-18" Id=41 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@592edf4c
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@592edf4c
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at weblogic.utils.concurrent.JDK15ConcurrentBlockingQueue.take(JDK15ConcurrentBlockingQueue.java:89)
+	at weblogic.store.internal.PersistentStoreImpl.getOutstandingWork(PersistentStoreImpl.java:724)
+	at weblogic.store.internal.PersistentStoreImpl.synchronousFlush(PersistentStoreImpl.java:1124)
+	at weblogic.store.internal.PersistentStoreImpl.run(PersistentStoreImpl.java:1116)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"[ACTIVE] ExecuteThread: '4' for queue: 'weblogic.kernel.Default (self-tuning)'" Id=40 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at com.munzandmore.stuckthread.LongRunningEJB.threadSleep(LongRunningEJB.java:26)
+	at com.munzandmore.stuckthread.LongRunningEJB_x9v26k_NoIntfViewImpl.__WL_invoke(Unknown Source)
+	at weblogic.ejb.container.internal.SessionLocalMethodInvoker.invoke(SessionLocalMethodInvoker.java:33)
+	at weblogic.ejb.container.internal.AsyncExecutor$Invoker.invoke(AsyncExecutor.java:205)
+	at weblogic.ejb.container.internal.AsyncExecutor.run(AsyncExecutor.java:73)
+	at weblogic.work.WorkAreaContextWrap.run(WorkAreaContextWrap.java:55)
+	at weblogic.work.SelfTuningWorkManagerImpl$WorkAdapterImpl.run(SelfTuningWorkManagerImpl.java:553)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:311)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:263)
+
+
+"ExecuteThread: '3' for queue: 'weblogic.socket.Muxer'" Id=39 RUNNABLE (in native)
+	at sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	at sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:200)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:103)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:87)
+	-  locked sun.nio.ch.Util$2@8fa8de4
+	-  locked java.util.Collections$UnmodifiableSet@15cb9468
+	-  locked sun.nio.ch.KQueueSelectorImpl@361432da
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:98)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:102)
+	at weblogic.socket.NIOSocketMuxer.selectFrom(NIOSocketMuxer.java:555)
+	at weblogic.socket.NIOSocketMuxer.processSockets(NIOSocketMuxer.java:474)
+	at weblogic.socket.SocketReaderRequest.run(SocketReaderRequest.java:30)
+	at weblogic.socket.SocketReaderRequest.execute(SocketReaderRequest.java:43)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:147)
+	at weblogic.kernel.ExecuteThread.run(ExecuteThread.java:119)
+
+
+"ExecuteThread: '2' for queue: 'weblogic.socket.Muxer'" Id=38 RUNNABLE (in native)
+	at sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	at sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:200)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:103)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:87)
+	-  locked sun.nio.ch.Util$2@25e24c41
+	-  locked java.util.Collections$UnmodifiableSet@42a23482
+	-  locked sun.nio.ch.KQueueSelectorImpl@808aed1
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:98)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:102)
+	at weblogic.socket.NIOSocketMuxer.selectFrom(NIOSocketMuxer.java:555)
+	at weblogic.socket.NIOSocketMuxer.processSockets(NIOSocketMuxer.java:474)
+	at weblogic.socket.SocketReaderRequest.run(SocketReaderRequest.java:30)
+	at weblogic.socket.SocketReaderRequest.execute(SocketReaderRequest.java:43)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:147)
+	at weblogic.kernel.ExecuteThread.run(ExecuteThread.java:119)
+
+
+"ExecuteThread: '1' for queue: 'weblogic.socket.Muxer'" Id=37 RUNNABLE (in native)
+	at sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	at sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:200)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:103)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:87)
+	-  locked sun.nio.ch.Util$2@3b8c74d2
+	-  locked java.util.Collections$UnmodifiableSet@3112c68b
+	-  locked sun.nio.ch.KQueueSelectorImpl@224ee1a9
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:98)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:102)
+	at weblogic.socket.NIOSocketMuxer.selectFrom(NIOSocketMuxer.java:555)
+	at weblogic.socket.NIOSocketMuxer.processSockets(NIOSocketMuxer.java:474)
+	at weblogic.socket.SocketReaderRequest.run(SocketReaderRequest.java:30)
+	at weblogic.socket.SocketReaderRequest.execute(SocketReaderRequest.java:43)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:147)
+	at weblogic.kernel.ExecuteThread.run(ExecuteThread.java:119)
+
+
+"ExecuteThread: '0' for queue: 'weblogic.socket.Muxer'" Id=36 RUNNABLE (in native)
+	at sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	at sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:200)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:103)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:87)
+	-  locked sun.nio.ch.Util$2@632c01fb
+	-  locked java.util.Collections$UnmodifiableSet@39be36c8
+	-  locked sun.nio.ch.KQueueSelectorImpl@47434dbb
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:98)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:102)
+	at weblogic.socket.NIOSocketMuxer.selectFrom(NIOSocketMuxer.java:555)
+	at weblogic.socket.NIOSocketMuxer.processSockets(NIOSocketMuxer.java:474)
+	at weblogic.socket.SocketReaderRequest.run(SocketReaderRequest.java:30)
+	at weblogic.socket.SocketReaderRequest.execute(SocketReaderRequest.java:43)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:147)
+	at weblogic.kernel.ExecuteThread.run(ExecuteThread.java:119)
+
+
+"Thread-17" Id=35 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@13a4548a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@13a4548a
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at weblogic.utils.concurrent.JDK15ConcurrentBlockingQueue.take(JDK15ConcurrentBlockingQueue.java:89)
+	at weblogic.store.internal.PersistentStoreImpl.getOutstandingWork(PersistentStoreImpl.java:724)
+	at weblogic.store.internal.PersistentStoreImpl.synchronousFlush(PersistentStoreImpl.java:1124)
+	at weblogic.store.internal.PersistentStoreImpl.run(PersistentStoreImpl.java:1116)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"DoSManager" Id=34 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at com.octetstring.vde.DoSManager.run(DoSManager.java:433)
+
+
+"VDE Transaction Processor Thread" Id=32 WAITING on com.octetstring.vde.backend.standard.TransactionProcessor@9aa3a19
+	at java.lang.Object.wait(Native Method)
+	-  waiting on com.octetstring.vde.backend.standard.TransactionProcessor@9aa3a19
+	at java.lang.Object.wait(Object.java:503)
+	at com.octetstring.vde.backend.standard.TransactionProcessor.waitChange(TransactionProcessor.java:367)
+	at com.octetstring.vde.backend.standard.TransactionProcessor.run(TransactionProcessor.java:212)
+
+
+"[STANDBY] ExecuteThread: '3' for queue: 'weblogic.kernel.Default (self-tuning)'" Id=27 WAITING on weblogic.work.ExecuteThread@6cc4444
+	at java.lang.Object.wait(Native Method)
+	-  waiting on weblogic.work.ExecuteThread@6cc4444
+	at java.lang.Object.wait(Object.java:503)
+	at weblogic.work.ExecuteThread.waitForRequest(ExecuteThread.java:247)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:281)
+
+
+"[STANDBY] ExecuteThread: '2' for queue: 'weblogic.kernel.Default (self-tuning)'" Id=26 WAITING on weblogic.work.ExecuteThread@4c95cfd8
+	at java.lang.Object.wait(Native Method)
+	-  waiting on weblogic.work.ExecuteThread@4c95cfd8
+	at java.lang.Object.wait(Object.java:503)
+	at weblogic.work.ExecuteThread.waitForRequest(ExecuteThread.java:247)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:281)
+
+
+"[ACTIVE] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'" Id=25 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:440)
+	at weblogic.platform.VM15.threadDumpAsString(VM15.java:22)
+	at weblogic.platform.VM.threadDumpAsString(VM.java:154)
+	at weblogic.t3.srvr.JVMRuntime.getThreadStackDump(JVMRuntime.java:100)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at weblogic.management.jmx.modelmbean.WLSModelMBean.getAttribute(WLSModelMBean.java:525)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute(DefaultMBeanServerInterceptor.java:647)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute(JmxMBeanServer.java:678)
+	at weblogic.management.jmx.mbeanserver.WLSMBeanServerInterceptorBase$12.run(WLSMBeanServerInterceptorBase.java:326)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at weblogic.management.jmx.mbeanserver.WLSMBeanServerInterceptorBase.getAttribute(WLSMBeanServerInterceptorBase.java:324)
+	at weblogic.management.mbeanservers.internal.JMXContextInterceptor.getAttribute(JMXContextInterceptor.java:157)
+	at weblogic.management.jmx.mbeanserver.WLSMBeanServerInterceptorBase$12.run(WLSMBeanServerInterceptorBase.java:326)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at weblogic.management.jmx.mbeanserver.WLSMBeanServerInterceptorBase.getAttribute(WLSMBeanServerInterceptorBase.java:324)
+	at weblogic.management.mbeanservers.internal.SecurityInterceptor.getAttribute(SecurityInterceptor.java:300)
+	at weblogic.management.jmx.mbeanserver.WLSMBeanServer.getAttribute(WLSMBeanServer.java:279)
+	at weblogic.management.mbeanservers.internal.JMXConnectorSubjectForwarder$5$1.run(JMXConnectorSubjectForwarder.java:327)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at weblogic.management.mbeanservers.internal.JMXConnectorSubjectForwarder$5.run(JMXConnectorSubjectForwarder.java:325)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:363)
+	at weblogic.management.mbeanservers.internal.JMXConnectorSubjectForwarder.getAttribute(JMXConnectorSubjectForwarder.java:320)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:97)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1332)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1431)
+	at javax.management.remote.rmi.RMIConnectionImpl.getAttribute(RMIConnectionImpl.java:661)
+	at javax.management.remote.rmi.RMIConnectionImpl_WLSkel.invoke(Unknown Source)
+	at weblogic.rmi.internal.BasicServerRef.invoke(BasicServerRef.java:701)
+	at weblogic.rmi.internal.BasicServerRef$1.run(BasicServerRef.java:527)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:363)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:146)
+	at weblogic.rmi.internal.BasicServerRef.handleRequest(BasicServerRef.java:523)
+	at weblogic.rmi.internal.wls.WLSExecuteRequest.run(WLSExecuteRequest.java:118)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:311)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:263)
+
+
+"weblogic.timers.TimerThread" Id=23 TIMED_WAITING on java.lang.Object@7f80952f
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.Object@7f80952f
+	at weblogic.timers.internal.TimerThread.doWait(TimerThread.java:114)
+	at weblogic.timers.internal.TimerThread.access$000(TimerThread.java:22)
+	at weblogic.timers.internal.TimerThread$Thread.run(TimerThread.java:290)
+
+
+"weblogic.time.TimeEventGenerator" Id=22 TIMED_WAITING on weblogic.time.common.internal.TimeTable@52c2820e
+	at java.lang.Object.wait(Native Method)
+	-  waiting on weblogic.time.common.internal.TimeTable@52c2820e
+	at weblogic.time.common.internal.TimeTable.snooze(TimeTable.java:286)
+	at weblogic.time.common.internal.TimeEventGenerator.run(TimeEventGenerator.java:117)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'" Id=21 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at com.munzandmore.stuckthread.LongRunningEJB.threadSleep(LongRunningEJB.java:26)
+	at com.munzandmore.stuckthread.LongRunningEJB_x9v26k_NoIntfViewImpl.__WL_invoke(Unknown Source)
+	at weblogic.ejb.container.internal.SessionLocalMethodInvoker.invoke(SessionLocalMethodInvoker.java:33)
+	at weblogic.ejb.container.internal.AsyncExecutor$Invoker.invoke(AsyncExecutor.java:205)
+	at weblogic.ejb.container.internal.AsyncExecutor.run(AsyncExecutor.java:73)
+	at weblogic.work.WorkAreaContextWrap.run(WorkAreaContextWrap.java:55)
+	at weblogic.work.SelfTuningWorkManagerImpl$WorkAdapterImpl.run(SelfTuningWorkManagerImpl.java:553)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:311)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:263)
+
+
+"Timer-2" Id=20 TIMED_WAITING on java.util.TaskQueue@5fe88f94
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@5fe88f94
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Timer-1" Id=19 WAITING on java.util.TaskQueue@1d2a6ebd
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@1d2a6ebd
+	at java.lang.Object.wait(Object.java:503)
+	at java.util.TimerThread.mainLoop(Timer.java:526)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Timer-0" Id=13 WAITING on java.util.TaskQueue@4ccc4940
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@4ccc4940
+	at java.lang.Object.wait(Object.java:503)
+	at java.util.TimerThread.mainLoop(Timer.java:526)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"RMI TCP Accept-9010" Id=11 RUNNABLE (in native)
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:403)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:530)
+	at java.net.ServerSocket.accept(ServerSocket.java:498)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:399)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:371)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"RMI TCP Accept-0" Id=10 RUNNABLE (in native)
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:403)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:530)
+	at java.net.ServerSocket.accept(ServerSocket.java:498)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:399)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:371)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Signal Dispatcher" Id=5 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@77dd3023
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@77dd3023
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:135)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:151)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@5a83874f
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@5a83874f
+	at java.lang.Object.wait(Object.java:503)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:133)
+
+
+"main" Id=1 WAITING on weblogic.t3.srvr.T3Srvr@712881f5
+	at java.lang.Object.wait(Native Method)
+	-  waiting on weblogic.t3.srvr.T3Srvr@712881f5
+	at java.lang.Object.wait(Object.java:503)
+	at weblogic.t3.srvr.T3Srvr.waitForDeath(T3Srvr.java:1144)
+	at weblogic.t3.srvr.T3Srvr.run(T3Srvr.java:543)
+	at weblogic.Server.main(Server.java:65)
+
+
