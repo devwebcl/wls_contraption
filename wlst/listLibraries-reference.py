@@ -23,10 +23,8 @@ Global Variables
 """
 username = 'weblogic'
 password = 'welcome1'
-<<<<<<< HEAD
 
 # tiene que ser URL de algun Managed Server
-
 URL = 't3://127.0.0.1:7001'
 
 
