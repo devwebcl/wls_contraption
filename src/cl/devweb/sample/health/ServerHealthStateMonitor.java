@@ -96,15 +96,21 @@ public class ServerHealthStateMonitor {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         String hostname = "127.0.0.1";
         String portString = "7001";
         String username = "weblogic";
         String password = "welcome1";
         ServerHealthStateMonitor s = new ServerHealthStateMonitor();
-        initConnection(hostname, portString, username, password);
-        s.printNameAndState();
-        connector.close();
+        try {
+			initConnection(hostname, portString, username, password);
+            s.printNameAndState();
+            connector.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     /*
