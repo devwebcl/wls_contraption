@@ -8,6 +8,11 @@ import sun.jvm.hotspot.oops.OopField;
 import sun.jvm.hotspot.oops.TypeArray;
 import sun.jvm.hotspot.runtime.VM;
 import sun.jvm.hotspot.tools.Tool;
+
+/*
+ * sudo java -cp .:/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/lib/sa-jdi.jar cl/devweb/profile/permgen/PrintStringTable
+ */
+
 /**
  * https://github.com/puneetlakhina/javautils/blob/master/src/com/blogspot/sahyog/PrintStringTable.java
  *
@@ -41,13 +46,13 @@ public class PrintStringTable extends Tool {
 
     }
     public static void main(String args[]) throws Exception {
-        /*if(args.length == 0 || args.length > 1) {
+        if(args.length == 0 || args.length > 1) {
         System.err.println("Usage: java com.blogspot.sahyog.PrintStringTable <PID of the JVM whose string table you want to print>");
         System.exit(1);
-        }*/
-        String [] args2 = { "58378" }; // PID, obviamente es
+        }
+        //String [] args2 = { "15932" }; // PID, obviamente es (usar jps -m)
         PrintStringTable pst = new PrintStringTable();
-        pst.start(args2);
+        pst.start(args);
         pst.stop();
     }
 

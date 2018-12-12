@@ -19,4 +19,18 @@
     <servlet-name>TestJdbc</servlet-name>
     <url-pattern>/TestJdbc</url-pattern>
   </servlet-mapping>
+
+	<servlet>
+		<servlet-name>ProxyServlet</servlet-name>
+		<servlet-class>weblogic.servlet.proxy.HttpProxyServlet</servlet-class>
+		<init-param>
+			<param-name>redirectURL</param-name>
+			<param-value>http://localhost:8080</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProxyServlet</servlet-name>
+		<url-pattern>/MyProducerApp/*</url-pattern>
+	</servlet-mapping>
+
 </web-app>

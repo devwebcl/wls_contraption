@@ -1,0 +1,7 @@
+connect('weblogic','welcome1','t3://localhost:7001')
+domainRuntime()
+cd('ServerRuntimes/AdminServer/JDBCServiceRuntime/AdminServer/JDBCDataSourceRuntimeMBeans/NOTIFICACIONES/')
+objArray = jarray.array([], java.lang.Object)
+strArray = jarray.array([], java.lang.String)
+invoke('shutdown', objArray, strArray)
+exit()
