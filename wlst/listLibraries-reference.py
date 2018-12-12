@@ -23,25 +23,11 @@ Global Variables
 """
 username = 'weblogic'
 password = 'welcome1'
+<<<<<<< HEAD
 
 # tiene que ser URL de algun Managed Server
 
-# URL = 't3://127.0.0.1:7001'
-
-#URL = 't3://200.14.166.72:9071'
-
-# WLS_REST01
-URL = 't3://200.14.166.72:7011'
-
-# WLSSandbox01
-#URL = 't3://200.14.166.72:30010'
-
-# WLSCore01
-#URL = 't3://200.14.166.72:20010'
-
-# WLSSatellite01
-# URL = 't3://200.14.166.72:10010'
-
+URL = 't3://127.0.0.1:7001'
 
 
 outputDir = '/Users/German/tmp'
