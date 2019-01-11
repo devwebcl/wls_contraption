@@ -4,7 +4,7 @@
   <groupId>cl.devweb</groupId>
   <artifactId>wls_log_retrieval</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>3.0</version>
   <name>wls_log_retrieval</name>
   <url>http://maven.apache.org</url>
 
@@ -20,6 +20,15 @@
 	    <artifactId>commons-collections4</artifactId>
 	    <version>4.1</version>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.sun.tools.btrace/btrace-client -->
+	<dependency>
+	    <groupId>com.sun.tools.btrace</groupId>
+	    <artifactId>btrace-client</artifactId>
+	    <version>1.2.3</version>
+        <scope>provided</scope>
+	</dependency>
+	
   </dependencies>
 
   <build>
@@ -32,7 +41,10 @@
 	        <configuration>
 	            <source>1.7</source>
 	            <target>1.7</target>
-	            <compilerArgument>-Xlint:all</compilerArgument>
+                <compilerArgs>
+                    <arg>-Xlint:all</arg>
+                    <arg>classpath=${CLASSPATH}/lib/bad.jar</arg>
+                </compilerArgs>
 	            <showWarnings>true</showWarnings>
 	            <showDeprecation>true</showDeprecation>
 	        </configuration>
