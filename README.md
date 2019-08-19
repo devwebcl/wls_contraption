@@ -12,3 +12,13 @@ Bunch of tools to help WLS admin, debugging, etc.
 
 
 
+6. sa-jdi.jar :
+
+[JavaVirtualMachines]$ find . -name sa-jdi.jar
+./jdk1.7.0_201.jdk/Contents/Home/lib/sa-jdi.jar
+./jdk1.8.0_131.jdk/Contents/Home/lib/sa-jdi.jar
+./jdk1.8.0_191.jdk/Contents/Home/lib/sa-jdi.jar
+./graalvm-ce-1.0.0-rc13/Contents/Home/lib/sa-jdi.jar
+
+
+
