@@ -2,7 +2,10 @@ package cl.devweb.decrypt;
 
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import sun.misc.BASE64Decoder;
+
+import org.apache.commons.codec.binary.Base64;
+//import sun.misc.BASE64Decoder;
+//java.util.Base64 -- java >= 8
 
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
@@ -17,6 +20,8 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
 import java.security.spec.InvalidKeySpecException;
+
+
 
 /**
  * 
@@ -37,6 +42,7 @@ java -cp .:/Users/German/development/jars/bcprov-jdk16-1.46.jar  cl.devweb.decry
 
 java -cp .:/Users/German/development/jars/bcprov-jdk16-1.46.jar  cl.devweb.decrypt.WebLogicPasswordDecryptor /Users/German/tmp/SerializedSystemIni.dat "{AES}DKwQHNzkNRFh8/CJMxIeTDvVMV9dkWWbMoHC4+iJ7lI="
   
+java -cp .:/Users/German/development/jars/bcprov-jdk16-1.46.jar:/Users/German/development/jars/commons-codec-1.10.jar  cl.devweb.decrypt.WebLogicPasswordDecryptor /Users/German/tmp/x/05-DS/SerializedSystemIni.dat "{AES}u1wHLIdnmWuhWoDeyubbyb7F6IXGvgbJjKKMMgMNg/s="
  
  
   
@@ -65,7 +71,10 @@ public class WebLogicPasswordDecryptor {
 
     public static String decryptAES(String SerializedSystemIni, String ciphertext) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, IOException {
 
-        byte[] encryptedPassword1 = new BASE64Decoder().decodeBuffer(ciphertext);
+        //byte[] encryptedPassword1 = new BASE64Decoder().decodeBuffer(ciphertext);
+        byte[] encryptedPassword1 = Base64.decodeBase64(ciphertext);
+        
+        
         byte[] salt = null;
         byte[] encryptionKey = null;
 
@@ -119,7 +128,8 @@ public class WebLogicPasswordDecryptor {
 
     public static String decrypt3DES(String SerializedSystemIni, String ciphertext) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, IOException {
 
-        byte[] encryptedPassword1 = new BASE64Decoder().decodeBuffer(ciphertext);
+        //byte[] encryptedPassword1 = new BASE64Decoder().decodeBuffer(ciphertext);
+        byte[] encryptedPassword1 = Base64.decodeBase64(ciphertext);
         byte[] salt = null;
         byte[] encryptionKey = null;
 
