@@ -20,7 +20,8 @@ import sun.jvm.hotspot.tools.Tool;
  * Print the string literal pool of a running JVM.
  * Based on http://www.docjar.com/html/api/sun/jvm/hotspot/tools/PermStat.java.html
  * Usage: java com.blogspot.sahyog.PrintStringTable &lt;Running JVM's PID&gt; <br />
- * You need to add sa-jdi.jar to your class path. This is generally available in your JDK's lib directory. Also, you might need to run this class with super user privileges in order to access the other JVM.
+ * You need to add sa-jdi.jar to your class path. This is generally available in your JDK's lib directory. 
+ * Also, you might need to run this class with super user privileges in order to access the other JVM.
  * @author puneet
  *
  */
