@@ -9,6 +9,7 @@ import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 import javax.naming.Context;
+import javax.rmi.ssl.SslRMIClientSocketFactory;
 
 //import com.google.common.collect.HashBasedTable;
 //import com.google.common.collect.Table;
@@ -21,6 +22,8 @@ import java.util.Map;
 import java.util.Set;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.rmi.server.RMIClientSocketFactory;
+
 import weblogic.management.runtime.JDBCDataSourceRuntimeMBean;
 import javax.management.*;
 import javax.naming.*;
@@ -51,13 +54,26 @@ public class ServerHealthStateMonitor {
         int port = portInteger.intValue();
         String jndiroot = "/jndi/";
         String mserver = "weblogic.management.mbeanservers.domainruntime";
+        
         JMXServiceURL serviceURL = new JMXServiceURL(protocol, hostname, port, jndiroot + mserver);
+        
         Hashtable h = new Hashtable();
         h.put(Context.SECURITY_PRINCIPAL, username);
         h.put(Context.SECURITY_CREDENTIALS, password);
         h.put(JMXConnectorFactory.PROTOCOL_PROVIDER_PACKAGES, "weblogic.management.remote");
+        
+        
+        //TODO: timeout!
+        //Ssl
+        RMIClientSocketFactory  csf =  
+                new SslRMIClientSocketFactory(); 
+        
+        //h.put("sun.rmi.transport.tcp.responseTimeout", "2");
+        h.put("jmx.remote.rmi.client.socket.factory", "100");  // 	RMI_CLIENT_SOCKET_FACTORY_ATTRIBUTE
+        
         connector = JMXConnectorFactory.connect(serviceURL, h);
         connection = connector.getMBeanServerConnection();
+        
     }
 
     public static ObjectName[] getServerRuntimes() throws Exception {
@@ -103,14 +119,14 @@ public class ServerHealthStateMonitor {
         String password = "welcome1";
         ServerHealthStateMonitor s = new ServerHealthStateMonitor();
         try {
-			initConnection(hostname, portString, username, password);
+            initConnection(hostname, portString, username, password);
             s.printNameAndState();
             connector.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /*
