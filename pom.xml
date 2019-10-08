@@ -1,68 +1,95 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>cl.devweb</groupId>
   <artifactId>wls_log_retrieval</artifactId>
   <packaging>war</packaging>
-  <version>3.0</version>
+  <version>3.2.1</version>
   <name>wls_log_retrieval</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
-  <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
-  </dependency>
-  <dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.0.1</version>
+        <scope>provided</scope>
+    </dependency>    
+    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-collections4</artifactId>
       <version>4.1</version>
-  </dependency>
-  
-  <!-- https://mvnrepository.com/artifact/com.sun.tools.btrace/btrace-client -->
-  <dependency>
+    </dependency>
+    <dependency>
       <groupId>com.sun.tools.btrace</groupId>
       <artifactId>btrace-client</artifactId>
       <version>1.2.3</version>
-        <scope>provided</scope>
-  </dependency>
-  
-  <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk16 -->
-  <dependency>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcprov-jdk16</artifactId>
       <version>1.46</version>
-  </dependency>
-  
-  <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
-  <dependency>
+    </dependency>
+    <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
       <version>1.10</version>
-  </dependency>
-  
+    </dependency>
+    <dependency>
+        <groupId>com.sample</groupId>
+        <artifactId>sample</artifactId>
+        <version>1.0</version>
+        <scope>system</scope>
+        <systemPath>/Users/German/development/jars/wlfullclient-wls1213.jar</systemPath>
+    </dependency>
+    <!-- dependency>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>wlfullclient</artifactId>
+        <version>12.1.0.1</version>
+      <scope>provided</scope>
+    </dependency -->
   </dependencies>
 
   <build>
     <finalName>wls_log_retrieval</finalName>
-  <plugins>
+    <plugins>
       <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.5.1</version>
-          <configuration>
-              <source>1.7</source>
-              <target>1.7</target>
-                <compilerArgs>
-                    <arg>-Xlint:all</arg>
-                    <arg>classpath=${CLASSPATH}/lib/bad.jar</arg>
-                </compilerArgs>
-              <showWarnings>true</showWarnings>
-              <showDeprecation>true</showDeprecation>
-          </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.5.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <compilerArgs>
+            <arg>-Xlint:all</arg>
+            <arg>classpath=${CLASSPATH}/lib/bad.jar</arg>
+          </compilerArgs>
+          <showWarnings>true</showWarnings>
+          <showDeprecation>true</showDeprecation>
+        </configuration>
       </plugin>
-  </plugins>
-    </build>
+    </plugins>
+  </build>
+  
+  <repositories>
+  <repository>
+    <id>maven.oracle.com</id>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+    <url>https://maven.oracle.com</url>
+    <layout>default</layout>
+  </repository>
+</repositories>
+<pluginRepositories>
+  <pluginRepository>
+    <id>maven.oracle.com</id>
+    <url>https://maven.oracle.com</url>
+  </pluginRepository>
+</pluginRepositories>
 </project>

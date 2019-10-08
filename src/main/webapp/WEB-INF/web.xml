@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                                 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <display-name>wls-logs-retrieval</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -19,18 +22,26 @@
     <servlet-name>TestJdbc</servlet-name>
     <url-pattern>/TestJdbc</url-pattern>
   </servlet-mapping>
-
-	<servlet>
-		<servlet-name>ProxyServlet</servlet-name>
-		<servlet-class>weblogic.servlet.proxy.HttpProxyServlet</servlet-class>
-		<init-param>
-			<param-name>redirectURL</param-name>
-			<param-value>http://localhost:8080</param-value>
-		</init-param>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ProxyServlet</servlet-name>
-		<url-pattern>/MyProducerApp/*</url-pattern>
-	</servlet-mapping>
-
+  <servlet>
+    <servlet-name>ProxyServlet</servlet-name>
+    <servlet-class>weblogic.servlet.proxy.HttpProxyServlet</servlet-class>
+    <init-param>
+      <param-name>redirectURL</param-name>
+      <param-value>http://localhost:8080</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProxyServlet</servlet-name>
+    <url-pattern>/MyProducerApp/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>World</display-name>
+    <servlet-name>World</servlet-name>
+    <servlet-class>cl.devweb.btrace.hello.World</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>World</servlet-name>
+    <url-pattern>/World</url-pattern>
+  </servlet-mapping>
 </web-app>
