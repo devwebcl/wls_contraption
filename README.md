@@ -7,7 +7,7 @@ Bunch of tools to help WLS admin, debugging, etc.
 2. JNDI tree printing
 3. Oracle JDBC version from a Managed Server
 4. Servers Health Status.<br>
-   configure Oracle Maven: https://docs.oracle.com/middleware/1213/core/MAVEN/config_maven_repo.htm (or use a local wlfullclient.jar)
+   configure Oracle Maven: [https://docs.oracle.com/middleware/1213/core/MAVEN/config_maven_repo.htm]() (or use a local wlfullclient.jar)
 5. Several WLST scripts to automatize tasks (`java weblogic.WLST -skipWLSModuleScanning \<script\>.py`)
 
 6. Print the string literal pool of a running JVM.
@@ -20,9 +20,17 @@ Bunch of tools to help WLS admin, debugging, etc.
 ./jdk1.8.0_191.jdk/Contents/Home/lib/sa-jdi.jar
 ./graalvm-ce-1.0.0-rc13/Contents/Home/lib/sa-jdi.jar
 ```
-7. btrace: a safe, dynamic tracing tool for the Java platform
+7. btrace: a safe, dynamic tracing tool for the Java platform (executed at visualvm)
 8. decrypt passwords
 9. OQL queries for eclipse-mat
 10. check jdbc driver version
 11. timestamp from server
+
+**TODO:**
+
+* fix README.md (links) :P
+* add Guava to Health WLS check
+* stuck thread sample
+* OOM sample
+
 

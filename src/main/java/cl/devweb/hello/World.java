@@ -1,4 +1,4 @@
-package cl.devweb.btrace.hello;
+package cl.devweb.hello;
 
 import java.io.IOException;
 import java.util.Date;

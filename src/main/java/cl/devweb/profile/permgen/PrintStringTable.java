@@ -53,7 +53,8 @@ public class PrintStringTable extends Tool {
         }
         //String [] args2 = { "15932" }; // PID, obviamente es (usar jps -m)
         PrintStringTable pst = new PrintStringTable();
-        pst.start(args);
+        //pst.start(args); //@Deprecated ?
+        pst.execute(args);
         pst.stop();
     }
 

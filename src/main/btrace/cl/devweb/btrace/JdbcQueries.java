@@ -9,11 +9,13 @@ import com.sun.btrace.annotations.*;
 /**
  * BTrace script to print timings for all executed JDBC statements on an event.
  * <p>
- * 
+ *
+ * https://blogs.oracle.com/sundararajan/btrace-in-the-real-world
+ * https://visualvm.github.io/plugins.html
+ *
  * @author Chris Glencross
  */
 
-// https://blogs.oracle.com/sundararajan/btrace-in-the-real-world
 
 @BTrace
 public class JdbcQueries {
