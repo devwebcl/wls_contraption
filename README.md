@@ -20,7 +20,7 @@ Bunch of tools to help WLS admin, debugging, etc.
 ./jdk1.8.0_191.jdk/Contents/Home/lib/sa-jdi.jar
 ./graalvm-ce-1.0.0-rc13/Contents/Home/lib/sa-jdi.jar
 ```
-7. btrace: a safe, dynamic tracing tool for the Java platform (executed at visualvm)
+7. btrace: a safe, dynamic tracing tool for the Java platform (executed at visualvm, [https://devwebcl.blogspot.com/2019/01/btrace.html]())
 8. decrypt passwords
 9. OQL queries for eclipse-mat
 10. check jdbc driver version
