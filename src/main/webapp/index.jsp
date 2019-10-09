@@ -8,17 +8,18 @@
 </head>
 <body>
 
-	<p><b>WLS Logs Retrieval</b></p>
-	
-	<p><%= new java.util.Date() %></p>
-	
-	<p>
-		<ul>
-			<li><a href="logs">Logs Dominio (app)</a></li>
-			<li><a href="servers/logs">servers/logs</a></li>
-			<li><a href="tmp">/tmp</a></li>
-		</ul>
-	</p>
+  <p><b>WLS Logs Retrieval</b></p>
+  
+  <p><%= new java.util.Date() %></p>
+  
+  <p>
+    <ul>
+      <li><a href="logs">Logs Dominio (app)</a></li>
+      <li><a href="servers/logs">servers/logs</a></li>
+            <li><a href="tmp">/tmp</a></li>
+            <li><a href="u04">/u04</a></li>
+    </ul>
+  </p>
 
 </body>
 </html>

@@ -29,7 +29,7 @@ y = int(checkTimes_Number)
  
 #############  This method would send the Alert Email with Thread Dump  #################
 def sendMailThreadDump():
-    # os.system('/bin/mailx -s  "ALERT: CHECK Thread Dumps as Hogger Thread Count Exceeded the Limit !!! " german.gonzalez@kdu.cl < All_ThreadDump.txt')
+    # os.system('/bin/mailx -s  "ALERT: CHECK Thread Dumps as Hogger Thread Count Exceeded the Limit !!! " german.gonzalez@email.com < All_ThreadDump.txt')
     print '*********  ALERT MAIL HAS BEEN SENT  ******#################################################*****'
     print '*********  ALERT MAIL HAS BEEN SENT  ***********'
     print ''
