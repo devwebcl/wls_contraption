@@ -1,5 +1,5 @@
 # wls_contraption
-Different WebLogic Server Tools
+Different WebLogic Server Tools (and other web containers)
 
 Bunch of tools to help WLS admin, debugging, etc.
 
