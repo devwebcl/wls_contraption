@@ -25,12 +25,14 @@ Bunch of tools to help WLS admin, debugging, etc.
 9. OQL queries for eclipse-mat
 10. check jdbc driver version
 11. timestamp from server
+12. stuck thread sample
+13. Heap OOM sample
+13. Metadata/Permgen OOM sample
+
 
 **TODO:**
 
 * fix README.md (links) :P
 * add Guava to Health WLS check
-* stuck thread sample
-* OOM sample
 
 
