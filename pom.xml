@@ -6,7 +6,7 @@
   <groupId>cl.devweb</groupId>
   <artifactId>wls-contraption</artifactId>
   <packaging>war</packaging>
-  <version>3.3.4</version>
+  <version>3.3.5</version>
   <name>wls-contraption</name>
 
 
@@ -58,6 +58,29 @@
       <scope>system</scope>
       <systemPath>/Library/Java/JavaVirtualMachines/jdk1.7.0_201.jdk/Contents/Home/lib/sa-jdi.jar</systemPath>
     </dependency>
+    
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>2.8.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-api</artifactId>
+	    <version>2.8.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-web</artifactId>
+	    <version>2.8.2</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>4.2.1.RELEASE</version>
+	</dependency>
+    
   </dependencies>
 
   <build>
