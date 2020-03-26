@@ -21,8 +21,7 @@ Bunch of tools to help WLS admin, debugging, etc.
 ./graalvm-ce-1.0.0-rc13/Contents/Home/lib/sa-jdi.jar
 ```
 7. btrace: a safe, dynamic tracing tool for the Java platform (executed at visualvm, [https://devwebcl.blogspot.com/2019/01/btrace.html]())
-8. decrypt passwords
-   [decrypt passwords](https://github.com/devwebcl/wls_contraption/blob/master/src/main/java/cl/devweb/decrypt/WebLogicPasswordDecryptor.java)
+8. [decrypt passwords](https://github.com/devwebcl/wls_contraption/blob/master/src/main/java/cl/devweb/decrypt/WebLogicPasswordDecryptor.java)
 9. OQL queries for eclipse-mat
 10. check jdbc driver version
 11. timestamp from server
