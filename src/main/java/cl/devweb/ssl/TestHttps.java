@@ -17,40 +17,37 @@ import org.springframework.web.client.RestTemplate;
 @WebServlet("/TestHttps")
 public class TestHttps extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
     public TestHttps() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+
 		RestTemplate restTemplate = new RestTemplate();
-		
+
 		String fooResourceUrl = "http://127.0.0.1:7002/jwt-service/jwt/certificate";
 		//String fooResourceUrl = "https://www.google.com/";
-		
-		
+
+
 		ResponseEntity<String> responseEntity  = restTemplate.getForEntity(fooResourceUrl , String.class);  // + "/1"
-		
+
 		System.out.println("=" + responseEntity);
 		//assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
-		
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

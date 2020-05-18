@@ -20,34 +20,32 @@ import org.apache.logging.log4j.Logger;
  */
 @WebServlet("/Test")
 public class Test extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 1L;
-	private static final Logger LOGGER = LogManager.getLogger(Test.class); 
-	
+	private static final Logger LOGGER = LogManager.getLogger(Test.class);
+
     /**
      * Default constructor.
      */
     public Test() {
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 
 		Date d = new Date();
-		
+
 		LOGGER.info("fecha {}", d);
-		
+
 
 
 		System.out.println("hola mundo");
 		System.out.println("hola mundo fecha: " + d );
 		System.out.println("log4j.configurationFile=" + System.getProperty("log4j.configurationFile"));
 
-		
+
 		response.getWriter().append("Served at: ").append(""+d+" ").append(request.getContextPath())
 			.append(" \nweblogic.Name==" + System.getProperty("weblogic.Name"));
 
@@ -68,7 +66,6 @@ public class Test extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

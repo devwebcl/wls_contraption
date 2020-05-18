@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/SSLPokeTest")
 public class SSLPokeTest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -27,22 +27,20 @@ public class SSLPokeTest extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("host="+request.getParameter("host") +  " port=" + Integer.parseInt(request.getParameter("port")));
-		
-		
+
+
 		 SSLPoke sp = new SSLPoke();
-	      
-	     sp.callSSL(request.getParameter("host"), Integer.parseInt(request.getParameter("port")) ); 
+
+	     sp.callSSL(request.getParameter("host"), Integer.parseInt(request.getParameter("port")) );
 	}
 
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
