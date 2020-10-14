@@ -21,27 +21,33 @@ public class SSLPoke
       System.err.println();
       System.err.println("Eg. to test the SSL certificate at https://localhost, use");
       System.err.println("  java " + SSLPoke.class.getName() + " localhost 443");
-      
+
       SSLPoke sp = new SSLPoke();
-      
+
       sp.callSSL(paramArrayOfString[0], Integer.parseInt(paramArrayOfString[1]) );
-      
+
     }
-    
-    
-    
+
+
+
   }
-  
+
   public void callSSL(String host, int port) {
-	  
+
 	    try
 	    {
 	      SSLSocketFactory localSSLSocketFactory = (SSLSocketFactory)SSLSocketFactory.getDefault();
 	      SSLSocket localSSLSocket = (SSLSocket)localSSLSocketFactory.createSocket(host, port);
-	      
+
+	      //
+	      /*SSLParameters params = new SSLParameters();
+	      params.setProtocols(new String[] {"TLSv1.2"});
+	      localSSLSocket.setSSLParameters(params);
+		  */
+
 	      InputStream localInputStream = localSSLSocket.getInputStream();
 	      OutputStream localOutputStream = localSSLSocket.getOutputStream();
-	      
+
 	      localOutputStream.write(1);
 	      while (localInputStream.available() > 0) {
 	        System.out.print(localInputStream.read());
