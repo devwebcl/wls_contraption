@@ -7,6 +7,13 @@ import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
+/*
+ - taken from https://confluence.atlassian.com/kb/unable-to-connect-to-ssl-services-due-to-pkix-path-building-failed-error-779355358.html
+
+ - added TLS v1.2
+
+
+*/
 public class SSLPoke
 {
   public static void main(String[] paramArrayOfString)
